@@ -5,7 +5,9 @@ const BlogContext = React.createContext();
 // children : the children component , will be treated as a children inside blog provider , as a prop
 // export : the Blogcontext obj will be used inside App.js file , not Default because the default is BlogContext 
 export const BlogProvider = ({ children }) => {
-    return <BlogContext.Provider>
+    return <BlogContext.Provider value={[1, 2, 3]}>
         {children}
     </BlogContext.Provider>
-}
+};
+
+export default BlogContext;

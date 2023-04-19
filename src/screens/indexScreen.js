@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { View, Text, StyleSheet } from "react-native";
+import BlogContext from "../context/BlogContext";
 
-import { View , Text , StyleSheet } from "react-native";
 
 const indexScreen = () => {
+    const value = useContext(BlogContext);
     return (
         <View>
-            <Text>indexScreen</Text>
+            <Text>{value}</Text>
         </View>
     )
 };
