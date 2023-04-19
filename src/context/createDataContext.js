@@ -30,17 +30,19 @@ export default (reducer, actions, initialState) => {
  * The reducer function is responsible for updating the state based on actions dispatched to it. 
  * The actions object contains callback functions that are used to dispatch actions to the reducer function from child components. 
  * The initial state is the initial value of the state managed by the provider.
- *
- * 
  * Inside the function, the React.createContext() function is called to create a new context object. 
  * This object is used to share data between components without passing the data down through multiple layers of components.
  * 
  * The provider component is then defined as a functional component that takes a children prop as input. 
- * The useReducer() hook is used to manage the state by initializing it with the reducer and the initial state. 
- * The current state and dispatch function returned from the useReducer() hook are used to create a value object that is passed to the context provider using the value prop.
+ * The useReducer() hook is used to manage the state by initializing it with the reducer and the initial state.
  * 
- * Finally, the function returns an object containing the context object and the provider component. 
- * The context object can be used to consume the state and dispatch function anywhere in the application by using the useContext() hook, 
- * and the provider component can be used to wrap other components in the application to give them access to the shared state managed by the reducer function.
- */
-
+ * Next, a for...in loop is used to iterate through each key-value pair in the actions object. 
+ * For each key, a new function is created that automatically dispatches the corresponding action to the reducer function when called. 
+ * The resulting bound functions are stored in a new boundActions object.
+ * 
+ * Finally, the value prop of the context provider is set to an object containing the current state and the boundActions object using spread syntax. 
+ * This makes both the state and the bound actions available to all child components that use the context object.
+ * 
+ * Overall, this code simplifies the process of creating and using actions with the context provider by automatically binding them to the dispatch function. 
+ * This can reduce the amount of boilerplate code required and make it easier to manage the state of the application.
+*/
