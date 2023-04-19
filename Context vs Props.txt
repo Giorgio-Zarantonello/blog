@@ -17,9 +17,9 @@ Context:
 Context is another way to pass data down the component tree, but it is designed to solve a different problem. 
 Context is used to pass data that is global or shared across multiple components, without having to pass props through every level of the component tree. 
 Context provides a way to avoid “prop drilling”, which is the process of passing props through multiple levels of nesting, even if the intermediate components don’t need the data.
-
 Context consists of two parts: the Provider and the Consumer. 
-The Provider component is used to provide data to the child components, and the Consumer component is used to consume that data. 
+
+The Provider component is used to provide dzzata to the child components, and the Consumer component is used to consume that data. 
 The Provider component is placed at the top level of the component tree, and the Consumer component is used in the child components that need access to the data.
 
 One key difference between Props and Context is that Props are typically used for passing data down the component tree, while Context is used for passing data across multiple components. 
