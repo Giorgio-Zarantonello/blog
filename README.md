@@ -44,7 +44,7 @@
 
 What i've learned : 
 * Passing data between components with Context
-* 
+* CRUD operation with Dynamic data source using Reducer
 
 <br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
