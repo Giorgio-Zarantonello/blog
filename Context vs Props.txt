@@ -1,0 +1,32 @@
+/*
+CHATGPT Generated Text 
+
+In React Native, both Context and Props are used to pass data and communicate between components. However, there are some key differences between the two.
+
+Props:
+
+Props are short for “properties”, which are used to pass data from a parent component to a child component. Props are read-only, 
+meaning that they cannot be modified by the child component. In other words, the parent component passes data down to the child component, 
+and the child component can use that data, but it cannot change it.
+
+Props are passed down through the component tree, from parent to child, and can be passed through multiple levels of nesting. 
+Props are declared as attributes on the component tag in JSX, and are accessed in the child component as a parameter in the function.
+
+Context:
+
+Context is another way to pass data down the component tree, but it is designed to solve a different problem. 
+Context is used to pass data that is global or shared across multiple components, without having to pass props through every level of the component tree. 
+Context provides a way to avoid “prop drilling”, which is the process of passing props through multiple levels of nesting, even if the intermediate components don’t need the data.
+
+Context consists of two parts: the Provider and the Consumer. 
+The Provider component is used to provide data to the child components, and the Consumer component is used to consume that data. 
+The Provider component is placed at the top level of the component tree, and the Consumer component is used in the child components that need access to the data.
+
+One key difference between Props and Context is that Props are typically used for passing data down the component tree, while Context is used for passing data across multiple components. 
+Props are also read-only, while Context can be read and updated by the child components that consume it.
+
+In conclusion, Props and Context are both important tools for passing data between components in React Native. Props are used for passing data down the component tree, 
+while Context is used for passing data across multiple components. Props are read-only, while Context can be read and updated by the consuming components. 
+Understanding the differences between Props and Context is key to building scalable and maintainable React Native applications.
+
+*/
