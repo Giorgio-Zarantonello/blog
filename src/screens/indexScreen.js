@@ -4,12 +4,13 @@ import { Context } from "../context/BlogContext";
 import { FlatList } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { version } from "react/cjs/react.production.min";
+import { TouchableOpacity } from "react-native";
 
 
 
 const indexScreen = () => {
     // const blogPosts = useContext(BlogContext);
-    const { state, addBlogPost } = useContext(Context);
+    const { state, addBlogPost , deleteBlogPost } = useContext(Context);
 
     return (
         <View>
@@ -20,8 +21,12 @@ const indexScreen = () => {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.row}>
-                            <Text style={styles.title}>{item.title}</Text>
-                            <AntDesign style={styles.icon} name="delete" />
+                            <Text style={styles.title}>{item.title} - {item.id}</Text>
+                            <TouchableOpacity onPress={() => {
+                                deleteBlogPost(item.id);
+                            }}>
+                                <AntDesign style={styles.icon} name="delete" />
+                            </TouchableOpacity>
                         </View>
                     );
                 }}
