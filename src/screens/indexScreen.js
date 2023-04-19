@@ -8,9 +8,9 @@ import { TouchableOpacity } from "react-native";
 
 
 
-const indexScreen = () => {
+const indexScreen = ({ navigation }) => {
     // const blogPosts = useContext(BlogContext);
-    const { state, addBlogPost , deleteBlogPost } = useContext(Context);
+    const { state, addBlogPost, deleteBlogPost } = useContext(Context);
 
     return (
         <View>
@@ -20,14 +20,18 @@ const indexScreen = () => {
                 keyExtractor={blogPost => blogPost.title}
                 renderItem={({ item }) => {
                     return (
-                        <View style={styles.row}>
-                            <Text style={styles.title}>{item.title} - {item.id}</Text>
-                            <TouchableOpacity onPress={() => {
-                                deleteBlogPost(item.id);
-                            }}>
-                                <AntDesign style={styles.icon} name="delete" />
-                            </TouchableOpacity>
-                        </View>
+                        <TouchableOpacity onPress={ () => navigation.navigate('Show' , {
+                            id : item.id
+                        })}>
+                            <View style={styles.row}>
+                                <Text style={styles.title}>{item.title} - {item.id}</Text>
+                                <TouchableOpacity onPress={() => {
+                                    deleteBlogPost(item.id);
+                                }}>
+                                    <AntDesign style={styles.icon} name="delete" />
+                                </TouchableOpacity>
+                            </View>
+                        </TouchableOpacity>
                     );
                 }}
             />
