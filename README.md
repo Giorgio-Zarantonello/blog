@@ -105,7 +105,7 @@ This is an example of how to list things you need to use the software and how to
 
 Giorgio Zarantonello -  giorgio.zarantonello@gmail.com
 
-Project Link: [https://github.com/Giorgio-Zarantonello/React-native-course](https://github.com/Giorgio-Zarantonello/React-native-course)
+Project Link: [https://github.com/Giorgio-Zarantonello/blog](https://github.com/Giorgio-Zarantonello/blog)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
