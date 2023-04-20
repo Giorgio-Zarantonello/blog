@@ -3,13 +3,14 @@
 <br>
 
 
-<h4 align="center"> Sezione 12 del corso "The Complete React Native + Hooks Course" @ Udemy </h4>
+<h4 align="center"> Sezione 12 - 13 del corso "The Complete React Native + Hooks Course" @ Udemy </h4>
 <br>
 
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/Giorgio-Zarantonello/blog">
-    <img width="390" height="844" src="https://user-images.githubusercontent.com/20912128/233076164-50ad4c9e-e958-4a41-99fe-87551331d122.png" alt="Logo" width="80" height="80">
+    <img width="390" height="844" src="https://user-images.githubusercontent.com/20912128/233432388-ee5cbda6-1daa-4ae0-be6b-5e3242b6e277.png" alt="Logo" width="80" height="80">
+
 
   </a>
 </div>
@@ -43,8 +44,13 @@
 ## About The Project
 
 What i've learned : 
-* Passing data between components with Context
-* CRUD operation with Dynamic data source using Reducer
+* What is the Context and Provider
+* Passing data between Screens with Context
+* Managing State with the Provider Pattern , useReducer Hook
+* CRUD operation with static and dynamic data (see commits)
+* NGROK and json-server 
+* HTTP GET , POST , PUT , DELETE with reducer 
+* async 
 
 <br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -78,7 +84,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
 2. ```sh
-   git clone https://github.com/Giorgio-Zarantonello/Restaurant-Search-App
+   git clone https://github.com/Giorgio-Zarantonello/blog
    ```
 3. Install NPM packages
    ```sh
