@@ -50,7 +50,7 @@ What i've learned :
 * CRUD operation with static and dynamic data (see commits)
 * NGROK and json-server 
 * HTTP GET , POST , PUT , DELETE with reducer 
-* async 
+* asynchronous Operations 
 
 <br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
