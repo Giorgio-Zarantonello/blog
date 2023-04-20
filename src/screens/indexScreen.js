@@ -11,10 +11,25 @@ const IndexScreen = ({ navigation }) => {
     // const blogPosts = useContext(BlogContext);
     const { state, deleteBlogPost, getBlogPost } = useContext(Context);
 
-    // stay aware to not run getBlogPost() every time , just use useEffect
+    /**
+     * Firstly, it immediately calls the getBlogPost() function during component mount. 
+     * Secondly, it configures and returns a cleanup function that removes a didFocus listener that is added to the navigation object.
+     * The didFocus listener specifies a callback function that will call getBlogPost() again whenever the screen in focus changes. 
+     * It is necessary because when the screen is revisited, the data may need to be updated, and calling getBlogPost() again can update the screen accordingly.
+     * 
+     * The empty array [] is the dependency array passed to the useEffect function, indicating that this effect function will only run the first time the component mounts.
+     * 
+     * Using listener.remove() ensures that the listener will be removed when the component unmounts, avoiding potential memory leaks.
+     */
     useEffect(() => {
         getBlogPost();
-    }, []); // empty array === arrow function runned exactly one time 
+        const listener = navigation.addListener('didFocus', () => {
+            getBlogPost();
+        });
+        return () => {
+            listener.remove();
+        }
+    }, []); 
 
 
     return (
