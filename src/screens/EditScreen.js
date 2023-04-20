@@ -1,9 +1,9 @@
-import React, from "react";
+import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
-const EditScreen = () => {
+const EditScreen = ({navigation}) => {
     return <View >
-        <Text>Edit Screen</Text>
+        <Text>Edit Screen - {navigation.getParam('id')}</Text>
     </View>
 };
 

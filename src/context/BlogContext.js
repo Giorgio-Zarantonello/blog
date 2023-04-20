@@ -14,15 +14,15 @@ const blogReducer = (state, action) => {
             return [
                 ...state, {
                     id: Math.floor(Math.random() * 99999),
-                    title: action.payload.title , 
-                    content : action.payload.content
+                    title: action.payload.title,
+                    content: action.payload.content
                 }];
         default: return state;
     }
 };
 
 const addBlogPost = (dispatch) => {
-    return (title, content , callback) => {
+    return (title, content, callback) => {
         dispatch({ type: 'add_blogpost', payload: { title: title, content: content } });
         callback();
     }
@@ -38,5 +38,6 @@ const deleteBlogPost = (dispatch) => {
 export const { Context, Provider } = createDataContext(
     blogReducer,
     { addBlogPost, deleteBlogPost },
-    []
+    //demo content , not for production purpose
+    [{ title: 'test post', content: 'test content' , id: 10 }]
 );
