@@ -24,6 +24,15 @@ const BlogPostForm = ({ onSubmit , initialValues }) => {
   );
 };
 
+// default values for non defined props in initialValue (for example)
+BlogPostForm.defaultProps = {
+  initialValues : {
+    title : '',
+    content : ''
+  }
+
+}
+
 const styles = StyleSheet.create({
   input: {
     fontSize: 18,
