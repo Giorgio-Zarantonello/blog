@@ -8,7 +8,7 @@ import { TouchableOpacity } from "react-native";
 
 
 
-const indexScreen = ({ navigation }) => {
+const IndexScreen = ({ navigation }) => {
     // const blogPosts = useContext(BlogContext);
     const { state, addBlogPost, deleteBlogPost } = useContext(Context);
 
@@ -20,8 +20,8 @@ const indexScreen = ({ navigation }) => {
                 keyExtractor={blogPost => blogPost.title}
                 renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity onPress={ () => navigation.navigate('Show' , {
-                            id : item.id
+                        <TouchableOpacity onPress={() => navigation.navigate('Show', {
+                            id: item.id
                         })}>
                             <View style={styles.row}>
                                 <Text style={styles.title}>{item.title} - {item.id}</Text>
@@ -38,6 +38,17 @@ const indexScreen = ({ navigation }) => {
         </View>
     );
 };
+
+//add screen funtionality
+IndexScreen.navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+                <AntDesign name="plus" size={30} />
+            </TouchableOpacity>
+        ),
+    };
+}
 
 const styles = StyleSheet.create({
     row: {
@@ -58,4 +69,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default indexScreen;
+export default IndexScreen;
