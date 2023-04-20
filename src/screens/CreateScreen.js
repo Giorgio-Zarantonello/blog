@@ -17,7 +17,7 @@ const CreateScreen = ({ navigation }) => {
         <Button
             onPress={() => {
                 // after safely done , call callback for navigation , for example waiting for an API call 
-                addBlogPost(title, content , () => {
+                addBlogPost(title, content, () => {
                     navigation.navigate('Index');
                 });
             }}
