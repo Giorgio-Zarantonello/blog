@@ -9,6 +9,9 @@ const BlogContext = React.createContext();
 
 const blogReducer = (state, action) => {
     switch (action.type) {
+        case 'get_blogpost':
+            // ritorno tutto lo state , che e' contenuto nel payload
+            return action.payload
         case 'delete_blogpost':
             return state.filter(blogPost => blogPost.id !== action.payload);
         case 'add_blogpost':
@@ -64,7 +67,8 @@ const editBlogPost = (dispatch) => {
 
 export const { Context, Provider } = createDataContext(
     blogReducer,
-    { addBlogPost, deleteBlogPost, editBlogPost },
-    //demo content , not for production purpose
-    [{ title: 'test post', content: 'test content', id: 10 }]
+    { addBlogPost, deleteBlogPost, editBlogPost , getBlogPost },
+    //demo content , not for production purpose (pre)
+    //now initial data from GET 
+    []
 );
