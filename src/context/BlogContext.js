@@ -9,9 +9,9 @@ const BlogContext = React.createContext();
 
 const blogReducer = (state, action) => {
     switch (action.type) {
-        case 'get_blogpost':
+        case 'get_blogposts':
             // ritorno tutto lo state , che e' contenuto nel payload
-            return action.payload
+            return action.payload;
         case 'delete_blogpost':
             return state.filter(blogPost => blogPost.id !== action.payload);
         case 'add_blogpost':
