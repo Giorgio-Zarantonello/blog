@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Context } from "../context/BlogContext";
 import { FlatList } from "react-native";
@@ -9,7 +9,13 @@ import { TouchableOpacity } from "react-native";
 
 const IndexScreen = ({ navigation }) => {
     // const blogPosts = useContext(BlogContext);
-    const { state, deleteBlogPost } = useContext(Context);
+    const { state, deleteBlogPost, getBlogPost } = useContext(Context);
+
+    // stay aware to not run getBlogPost() every time , just use useEffect
+    useEffect(() => {
+        getBlogPost();
+    }, []); // empty array === arrow function runned exactly one time 
+
 
     return (
         <View>
